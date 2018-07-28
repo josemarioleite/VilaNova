@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VilaNova.View.AddOS"
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout >
+
+                <StackLayout HorizontalOptions="Center" Margin="5">
+                    <Image Source="custom2"/>
+                </StackLayout>
+
+                <StackLayout Margin="5">
+
+                    <StackLayout Margin="5">
+                        <Label Text="Dados do Cliente" FontSize="22" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource LabelTitle3}"/>
+                        <BoxView HeightRequest="3"/>
+                        <Entry x:Name="nomeCliente"    Placeholder="Nome do Cliente" />
+                        <Entry x:Name="emailCliente"   Placeholder="E-mail" />
+                        <Entry x:Name="cpfCliente"     Placeholder="CPF" Keyboard="Numeric"/>
+                        <Entry x:Name="numeroCliente"  Placeholder="Número(Celular)"/>
+
+                    </StackLayout>
+
+                    <StackLayout Margin="5">
+                        <Label Text="Dados do Instrumento" FontSize="22" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource LabelTitle3}"/>
+                        <BoxView HeightRequest="3"/>
+                        <Entry x:Name="instruCliente" Placeholder="Instrumento"/>
+                        <Entry x:Name="descInstru"    Placeholder="Descrição do Serviço"/>
+                        <Entry x:Name="obsInstru"     Placeholder="Observação" />
+                        <DatePicker x:Name="dateEntrega"/>
+                        <!--<Entry x:Name="dateEntrega"   Placeholder="Data da Entrega" Keyboard="Numeric"/>-->
+                        <Entry x:Name="valorServ"     Placeholder="Valor do Serviço" />
+
+                    </StackLayout>
+
+                    <Button Text="Salvar Dados" Clicked="SalvarAction" Margin="5"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

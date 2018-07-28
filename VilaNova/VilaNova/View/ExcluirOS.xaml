@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VilaNova.View.ExcluirOS"
+             NavigationPage.HasNavigationBar="False">
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="5">
+
+                <StackLayout HorizontalOptions="Center" Margin="5">
+                    <Image Source="custom2"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="5" Spacing="0" HorizontalOptions="CenterAndExpand">
+                    <Label FontSize="18"  Style="{StaticResource LabelTitle3}" Text="Total Serviços: "/>
+                    <Label FontSize="18"  Text=""  x:Name="lblCount" Style="{StaticResource LabelTitle3}"/>
+                </StackLayout>
+
+                <!--<StackLayout Margin="5">
+                    <Label  HorizontalOptions="End" Text="+ Adicionar O.S" Style="{StaticResource LabelTitle3}" FontSize="20" FontFamily="Roboto">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="AdicionarAction" CommandParameter="{Binding .}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>-->
+
+                <StackLayout>
+                    <BoxView HeightRequest="3"/>
+                </StackLayout>
+
+                <ListView x:Name="ListaClientes" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid  BackgroundColor="#E5E7E8">
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="100" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+
+
+                                    <StackLayout Grid.Column="0">
+                                        <Label  Text="{Binding NomeCliente}" FontSize="18" Style="{StaticResource LabelTitle2}" FontAttributes="Bold" />
+                                        <Label  Text="{Binding Instrumento}" FontSize="16"/>
+
+                                        <StackLayout Orientation="Horizontal" Spacing="0">
+                                            <Label Text="R$" TextColor="#8B0000"/>
+                                            <Label Text="{Binding Valor}" FontSize="14" TextColor="#8B0000"/>
+                                            <Label Text=",00" TextColor="#8B0000"/>
+                                        </StackLayout>
+                                    </StackLayout>
+
+                                    <Label Text="- Excluir" Style="{StaticResource LabelTitle3}" Grid.Column="1" VerticalOptions="Center" 
+                                           FontSize="18"  HorizontalOptions="Center">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="ExcluirAction" 
+                                                                  CommandParameter="{Binding .}" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

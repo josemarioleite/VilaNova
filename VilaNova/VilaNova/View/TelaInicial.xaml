@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VilaNova.View.TelaInicial" BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="5">
+
+                <StackLayout HorizontalOptions="Center">
+                    <Image Source="custom2"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="10">
+                    <StackLayout Spacing="1" Orientation="Horizontal">
+                        <Label  HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Style="{StaticResource LabelTitle2}" Text="Total Serviços: "/>
+                        <Label  HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Text=""  x:Name="lblCount" TextColor="Black"/>
+                    </StackLayout>
+                    <!--<Button HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" 
+                            BackgroundColor="Transparent" TextColor="#8B0000" FontAttributes="Bold"
+                            Text="+ Adicionar O.S" 
+                            FontSize="16" Clicked="pageADD"/>-->
+
+                    <Button HeightRequest="38"
+                            HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" 
+                            FontAttributes="Bold"
+                            Text="+ Adicionar O.S" 
+                            FontSize="16" Clicked="pageADD"/>
+                </StackLayout>
+
+                <!--<StackLayout Margin="5">
+                    <Label  HorizontalOptions="End" Text="+ Adicionar O.S" Style="{StaticResource LabelTitle3}" FontSize="20" FontFamily="Roboto">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="AdicionarAction" CommandParameter="{Binding .}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>-->
+
+             <StackLayout Spacing="0">
+                <Entry TextChanged="PesquisarAction" Placeholder="Procurar Cliente" 
+                           HorizontalTextAlignment="Center" IsSpellCheckEnabled="True"
+                           IsTextPredictionEnabled="True">
+
+                </Entry>
+                
+            </StackLayout>
+
+
+            <ListView x:Name="ListaClientes" HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                <Grid BackgroundColor="#E5E7E8">
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="100" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+
+
+                                    <StackLayout Grid.Column="0">
+                                        <Label  Text="{Binding NomeCliente}" FontSize="18" Style="{StaticResource LabelTitle2}" FontAttributes="Bold" />
+                                        <Label  Text="{Binding Instrumento}" FontSize="16" Style="{StaticResource LabelTitle2}" />
+
+                                        <StackLayout Orientation="Horizontal" Spacing="0">
+                                            <Label Text="R$" TextColor="#8B0000"/>
+                                            <Label Text="{Binding Valor}" FontSize="14" TextColor="#8B0000"/>
+                                            <Label Text=",00" TextColor="#8B0000"/>
+                                        </StackLayout>
+                                    </StackLayout>
+
+                                    <Label Text="+ Detalhes" Grid.Column="1"
+                                           HorizontalOptions="Center" FontSize="16"        
+                                           VerticalOptions="Center" FontAttributes="Bold"
+                                           Style="{StaticResource LabelTitle3}">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="DetalheAction" CommandParameter="{Binding .}" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+
+                                </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+               
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

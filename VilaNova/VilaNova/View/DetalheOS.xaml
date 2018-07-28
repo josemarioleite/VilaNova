@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VilaNova.View.DetalheOS" BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="5">
+
+                <StackLayout HorizontalOptions="Center" >
+                    <Image Source="custom2"/>
+                </StackLayout>
+
+                <!--DADOS SOBRE O INSTRUMETO-->
+
+                <StackLayout Margin="5">
+                    <Label Text="Dados do Cliente" FontSize="22" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource LabelTitle3}"/>
+                    <BoxView HeightRequest="3"/>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Nome do Cliente: " Style="{StaticResource LabelTitle3}"/>
+                        <Label Text="{Binding NomeCliente}" Style="{StaticResource LabelTitle2}" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Email do Cliente: " Style="{StaticResource LabelTitle3}"/>
+                        <Label Text="{Binding EmailCliente}" Style="{StaticResource LabelTitle2}" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="CPF do Cliente: " Style="{StaticResource LabelTitle3}"/>
+                        <Label Text="{Binding CPFcliente}" Style="{StaticResource LabelTitle2}" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Número do Cliente: " Style="{StaticResource LabelTitle3}"/>
+                        <Label Text="{Binding NumeroCliente}" Style="{StaticResource LabelTitle2}" />
+                    </StackLayout>
+
+                </StackLayout>
+
+                <!--DADOS SOBRE O INSTRUMETO-->
+
+                <Label Text="Dados do Instrumento" FontSize="22" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource LabelTitle3}"/>
+                <BoxView HeightRequest="3"/>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Instrumento: " Style="{StaticResource LabelTitle3}"/>
+                    <Label Text="{Binding Instrumento}" Style="{StaticResource LabelTitle2}" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Descrição do Serviço: " Style="{StaticResource LabelTitle3}"/>
+                    <Label Text="{Binding Descricao}" Style="{StaticResource LabelTitle2}" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Observação: " Style="{StaticResource LabelTitle3}"/>
+                    <Label Text="{Binding Observacao}" Style="{StaticResource LabelTitle2}" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Data de Entrega: " Style="{StaticResource LabelTitle3}"/>
+                    <Label Text="{Binding DataEntrega, StringFormat='{0:dd/MM/yyyy}'}" Style="{StaticResource LabelTitle2}" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Valor do Serviço: " Style="{StaticResource LabelTitle3}"/>
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <Label Text="R$" Style="{StaticResource LabelTitle2}" />
+                        <Label Text="{Binding Valor}" Style="{StaticResource LabelTitle2}" />
+                        <Label Text=",00" Style="{StaticResource LabelTitle2}"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Margin="5">
+                    <BoxView HeightRequest="3"/>
+                </StackLayout>
+
+                <StackLayout Margin="5" Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="Excluir" Clicked="ExcluirAction"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
